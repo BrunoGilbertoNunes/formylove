@@ -6,6 +6,6 @@ export const relationship = {
 
 export const music = {
   enabled: true,
-  src: "/audio/Baco Exu do Blues - Flamingos.mp3",
+  src: "audio/Baco-Exu-do-Blues-Flamingos.mp3",
   title: "Música do primeiro encontro",
 };

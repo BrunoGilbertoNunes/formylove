@@ -1,4 +1,5 @@
 import { music } from "../config/relationship";
+import { asset } from "./assetPath";
 
 let audio: HTMLAudioElement | null = null;
 let hasLoaded = false;
@@ -23,7 +24,7 @@ export function initMusic(): void {
   const el = getAudio();
   if (!el) return;
   if (!hasLoaded && music.src) {
-    el.src = music.src;
+    el.src = asset(music.src) ?? "";
     hasLoaded = true;
   }
 }

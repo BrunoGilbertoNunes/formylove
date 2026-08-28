@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ImageOff } from "lucide-react";
+import { asset } from "../utils/assetPath";
 
 type MemoryImageProps = {
   src?: string;
@@ -14,6 +15,7 @@ type MemoryImageProps = {
  */
 export function MemoryImage({ src, alt, className, eager }: MemoryImageProps) {
   const [failed, setFailed] = useState(false);
+  const resolvedSrc = asset(src);
 
   if (!src || failed) {
     return (
@@ -34,7 +36,7 @@ export function MemoryImage({ src, alt, className, eager }: MemoryImageProps) {
 
   return (
     <img
-      src={src}
+      src={resolvedSrc}
       alt={alt}
       loading={eager ? "eager" : "lazy"}
       onError={() => setFailed(true)}
