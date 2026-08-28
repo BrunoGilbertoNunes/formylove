@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-wine-950 text-cream-50 font-sans antialiased;
+}
+
+/* Remove default focus outline, add accessible one */
+:focus-visible {
+  @apply outline-none ring-2 ring-wine-400 ring-offset-2 ring-offset-wine-950;
+}
+
+/* Thin, elegant scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(186, 92, 124, 0.4);
+  border-radius: 9999px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Elegant selection */
+::selection {
+  background: rgba(186, 92, 124, 0.4);
+  color: #fff;
+}
